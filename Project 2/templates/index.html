@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Car Evaluation Classifier</title>
+
+    <link rel="stylesheet"
+          href="/static/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Car Evaluation Classifier</h1>
+
+        <p class="subtitle">
+            Machine Learning Project using Random Forest
+        </p>
+
+        <form action="/" method="post">
+
+            <div class="grid">
+
+                <div class="input-group">
+
+                    <label>Buying Price</label>
+
+                    <select name="buying">
+
+                        <option value="vhigh">Very High</option>
+                        <option value="high">High</option>
+                        <option value="med">Medium</option>
+                        <option value="low">Low</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Maintenance Cost</label>
+
+                    <select name="maint">
+
+                        <option value="vhigh">Very High</option>
+                        <option value="high">High</option>
+                        <option value="med">Medium</option>
+                        <option value="low">Low</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Number of Doors</label>
+
+                    <select name="doors">
+
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5more">5 or More</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Capacity</label>
+
+                    <select name="persons">
+
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="more">More</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Luggage Boot</label>
+
+                    <select name="lug_boot">
+
+                        <option value="small">Small</option>
+                        <option value="med">Medium</option>
+                        <option value="big">Big</option>
+
+                    </select>
+
+                </div>
+
+                <div class="input-group">
+
+                    <label>Safety</label>
+
+                    <select name="safety">
+
+                        <option value="low">Low</option>
+                        <option value="med">Medium</option>
+                        <option value="high">High</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <button type="submit">
+
+                Predict Car
+
+            </button>
+
+        </form>
+
+        {% if prediction %}
+
+        <div class="result">
+
+            <h2>Prediction</h2>
+
+            {% if prediction == "unacc" %}
+
+            <div class="badge red">
+
+                Unacceptable
+
+            </div>
+
+            {% elif prediction == "acc" %}
+
+            <div class="badge yellow">
+
+                Acceptable
+
+            </div>
+
+            {% elif prediction == "good" %}
+
+            <div class="badge blue">
+
+                Good
+
+            </div>
+
+            {% elif prediction == "vgood" %}
+
+            <div class="badge green">
+
+                Very Good
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
