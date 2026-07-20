@@ -146,9 +146,6 @@ Displays the web application.
 
 ## Prediction
 
-```
-POST /
-```
 
 Input Parameters
 
